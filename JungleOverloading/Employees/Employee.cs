@@ -63,6 +63,25 @@ namespace JungleOverloading.Employees
             return restEatingAt;
         }
 
+        public string Eat(string food, List<Employee> companions)
+        {
+            string restEatingAt = RandRestChosen();
+            string eatingWith = $"with ";
+            short counter = 0;
+            foreach (var friend in companions)
+            {
+                ++counter;
+                if (companions.Count == counter)
+                {
+                    eatingWith += $"and {friend.EmpFirstName}";
+                    break;
+                }
+                eatingWith += $"{friend.EmpFirstName}, ";
+            }
+            Console.WriteLine($"{EmpFullName()} ate {food} at {restEatingAt} {eatingWith}");
+            return restEatingAt;
+        }
+
         readonly List<string> Restaraunts = new List<string>
         {
             "Arbys",

@@ -18,7 +18,7 @@ namespace JungleOverloading
             Friends.Add(inds);
 
 
-            Console.WriteLine($"{jess.Eat(Friends)}");
+            Console.WriteLine($"{jess.Eat("doughnuts", Friends)}");
             Console.ReadKey();
         }
     }
